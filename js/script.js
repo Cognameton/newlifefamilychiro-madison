@@ -138,46 +138,19 @@
         body.classList.remove('grayscale', 'invert', 'links-underline', 'highlight-links', 'readable-font');
     });
 
-    // ============ Contact Form Submission ============
+    // ============ Contact Form Captcha Validation ============
     const contactForm = document.getElementById('contactForm');
-    const formSuccess = document.getElementById('formSuccess');
     if (contactForm) {
-        contactForm.addEventListener('submit', async function (e) {
-            e.preventDefault();
+        contactForm.addEventListener('submit', function (e) {
             const captcha = document.getElementById('captcha');
             if (captcha && parseInt(captcha.value, 10) !== 7) {
+                e.preventDefault();
                 captcha.style.borderColor = '#d44';
                 captcha.focus();
                 return;
             }
             if (captcha) captcha.style.borderColor = '';
-
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
-
-            try {
-                const data = new FormData(contactForm);
-                data.append('_subject', 'New Message – New Life Family Chiropractic Madison');
-                data.append('_captcha', 'false');
-                const res = await fetch('https://formsubmit.co/ajax/madisonnewlife02@gmail.com', {
-                    method: 'POST',
-                    headers: { 'Accept': 'application/json' },
-                    body: data
-                });
-                if (res.ok) {
-                    contactForm.reset();
-                    if (formSuccess) {
-                        formSuccess.classList.add('show');
-                        setTimeout(() => formSuccess.classList.remove('show'), 6000);
-                    }
-                } else {
-                    alert('There was a problem sending your message. Please call us at (256) 301-0110.');
-                }
-            } catch {
-                alert('There was a problem sending your message. Please call us at (256) 301-0110.');
-            } finally {
-                if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message'; }
-            }
+            // Form submits naturally to formsubmit.co
         });
     }
 

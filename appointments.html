@@ -114,7 +114,11 @@
                     <h2>Appointment Request Form</h2>
                     <p class="form-intro">Please complete the form below with as much detail as possible. All fields marked with <span class="req">*</span> are required.</p>
 
-                    <form class="appointment-form" id="appointmentForm" novalidate>
+                    <form class="appointment-form" id="appointmentForm" method="POST" action="https://formsubmit.co/madisonnewlife02@gmail.com" novalidate>
+                        <input type="hidden" name="_subject" value="New Appointment Request – New Life Family Chiropractic Madison">
+                        <input type="hidden" name="_next" value="https://newlifefamilychiro-madison.org/appointments.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_honey" style="display:none">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstName">First Name <span class="req">*</span></label>
