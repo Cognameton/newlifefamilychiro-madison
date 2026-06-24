@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://newlifefamilychiro-madison.org/sitemap.xml
