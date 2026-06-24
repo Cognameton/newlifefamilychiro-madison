@@ -138,10 +138,11 @@
         body.classList.remove('grayscale', 'invert', 'links-underline', 'highlight-links', 'readable-font');
     });
 
-    // ============ Contact Form Captcha Validation ============
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+    // ============ Captcha Validation (contact + appointment forms) ============
+    function attachCaptchaValidation(formId) {
+        const form = document.getElementById(formId);
+        if (!form) return;
+        form.addEventListener('submit', function (e) {
             const captcha = document.getElementById('captcha');
             if (captcha && parseInt(captcha.value, 10) !== 7) {
                 e.preventDefault();
@@ -150,9 +151,10 @@
                 return;
             }
             if (captcha) captcha.style.borderColor = '';
-            // Form submits naturally to formsubmit.co
         });
     }
+    attachCaptchaValidation('contactForm');
+    attachCaptchaValidation('appointmentForm');
 
     // ============ Intersection Observer for Reveal Animations ============
     if ('IntersectionObserver' in window) {

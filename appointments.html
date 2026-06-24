@@ -186,12 +186,18 @@
                             <textarea id="message" name="message" rows="5" placeholder="Please share anything else you'd like us to know about your health goals or current concerns..."></textarea>
                         </div>
 
-                        <div class="form-group form-captcha">
-                            <label for="captcha">Verification <span class="req">*</span></label>
-                            <div class="captcha-row">
-                                <span class="captcha-question">What is <strong id="captchaA">3</strong> + <strong id="captchaB">5</strong>?</span>
-                                <input type="number" id="captcha" name="captcha" required>
+                        <div class="form-group">
+                            <label>SMS Opt-in or Opt-out <span class="req">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-label"><input type="radio" name="sms" value="opt-in" required> Opt into receiving SMS</label>
+                                <label class="radio-label"><input type="radio" name="sms" value="opt-out"> Opt out of receiving SMS</label>
                             </div>
+                            <p class="sms-consent">By providing my phone number, I consent to receive SMS text messages from New Life Family Chiropractic for appointment reminders, marketing messages, and general two-way communication. Msg frequency varies. Msg &amp; data rates may apply. Reply HELP for support. Reply STOP to opt out.</p>
+                        </div>
+
+                        <div class="form-group form-captcha">
+                            <label for="captcha">What is 4 + 3? <span class="req">*</span></label>
+                            <input type="text" id="captcha" name="captcha" required>
                         </div>
 
                         <div class="form-group form-consent">
