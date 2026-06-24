@@ -167,59 +167,49 @@
                     <h2>Send Us a Message</h2>
                     <p>Have a question? Fill out the form below and we'll get back to you within one business day.</p>
 
-                    <form class="contact-form" id="contactForm" method="POST" action="https://formsubmit.co/madisonnewlife02@gmail.com" novalidate>
+                    <form class="contact-form" id="contactForm" method="POST" action="https://formsubmit.co/madisonnewlife02@gmail.com">
                         <input type="hidden" name="_subject" value="New Message – New Life Family Chiropractic Madison">
                         <input type="hidden" name="_next" value="https://newlifefamilychiro-madison.org/contact.html">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="text" name="_honey" style="display:none">
+                        <div class="disclaimer">
+                            <p><strong>Please use this form for general information purposes only.</strong> DO NOT send personal health information through this form. Specific patient care must be addressed during your appointment.</p>
+                        </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="cFirstName">First Name <span class="req">*</span></label>
-                                <input type="text" id="cFirstName" name="firstName" required>
+                                <label for="name">Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label for="cLastName">Last Name <span class="req">*</span></label>
-                                <input type="text" id="cLastName" name="lastName" required>
+                                <label for="phone">Phone <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" required>
                             </div>
                         </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="cEmail">Email <span class="req">*</span></label>
-                                <input type="email" id="cEmail" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="cPhone">Phone</label>
-                                <input type="tel" id="cPhone" name="phone">
-                            </div>
-                        </div>
-
                         <div class="form-group">
-                            <label for="cSubject">Subject</label>
-                            <select id="cSubject" name="subject">
-                                <option>General Question</option>
-                                <option>Appointment Inquiry</option>
-                                <option>Insurance / Billing</option>
-                                <option>Service Question</option>
-                                <option>Other</option>
-                            </select>
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="cMessage">Message <span class="req">*</span></label>
-                            <textarea id="cMessage" name="message" rows="6" required placeholder="How can we help you?"></textarea>
-                        </div>
-
-                        <div class="form-group form-captcha">
-                            <label for="cCaptcha">Verification <span class="req">*</span></label>
-                            <div class="captcha-row">
-                                <span class="captcha-question">What is <strong id="cCaptchaA">2</strong> + <strong id="cCaptchaB">4</strong>?</span>
-                                <input type="number" id="cCaptcha" name="captcha" required>
+                            <label>SMS Opt-in or Opt-out <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-label"><input type="radio" name="sms" value="opt-in" required> Opt into receiving SMS</label>
+                                <label class="radio-label"><input type="radio" name="sms" value="opt-out"> Opt out of receiving SMS</label>
                             </div>
+                            <p class="sms-consent">By providing my phone number, I consent to receive SMS text messages from New Life Family Chiropractic for appointment reminders, marketing messages, and general two-way communication. Msg frequency varies. Msg &amp; data rates may apply. Reply HELP for support. Reply STOP to opt out.</p>
                         </div>
-
-                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
-                        <div class="form-message" id="contactFormMessage" aria-live="polite"></div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="captcha">What is 4 + 3? <span class="required">*</span></label>
+                            <input type="text" id="captcha" name="captcha" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                        <div class="form-success" id="formSuccess">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                            Thank you! Your message has been sent. We'll be in touch shortly.
+                        </div>
                     </form>
                 </div>
 
